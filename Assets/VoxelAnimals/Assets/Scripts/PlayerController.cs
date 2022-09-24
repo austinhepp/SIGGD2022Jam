@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 300;
     public float timeBeforeNextJump = 1.2f;
     private float canJump = 0f;
+    public int snowpoint = 0;
     
     Animator anim;
     Rigidbody rb;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 temp = snowball.transform.localScale;
                 temp += new Vector3(0.001f, 0.001f, 0.001f);
                 snowball.transform.localScale = temp;
+                snowpoint = snowpoint + 1;
                 //snowball.transform.localScale = snowball.transform.localScale * 1.5f;
                 //Vector3.Scale(snowball.transform.localScale, snowball.transform.localScale + new Vector3(1.5f, 1.5f, 1.5f));
             }
