@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9109616073612188210}
   - component: {fileID: 551114804309290099}
   - component: {fileID: -553449438683988194}
+  - component: {fileID: -8300140359761303875}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Untagged
@@ -111,3 +112,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTarget: {fileID: 4936587561821370, guid: 2884e6b071e1c2a4faef2e7fd67b481e, type: 3}
+--- !u!114 &-8300140359761303875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443644741705906587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10091b49bbc184be99e72c1421e62242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTarget: {fileID: 0}

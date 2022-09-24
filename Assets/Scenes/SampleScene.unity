@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &183908813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1755646104177140, guid: 2884e6b071e1c2a4faef2e7fd67b481e, type: 3}
+  m_PrefabInstance: {fileID: 263897226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &263897226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -582,6 +587,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -553449438683988194, guid: 86eb9f2b0752b45509fc02c00073c826, type: 3}
+      propertyPath: mTarget
+      value: 
+      objectReference: {fileID: 183908813}
     - target: {fileID: 5443644741705906587, guid: 86eb9f2b0752b45509fc02c00073c826, type: 3}
       propertyPath: m_Name
       value: Snowball
@@ -630,5 +639,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8300140359761303875, guid: 86eb9f2b0752b45509fc02c00073c826, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86eb9f2b0752b45509fc02c00073c826, type: 3}
