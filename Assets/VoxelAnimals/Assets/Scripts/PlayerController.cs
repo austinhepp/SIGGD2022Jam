@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject penguin;
     [SerializeField] private GameObject snowball;
-    public float movementSpeed = 3;
-    public float jumpForce = 300;
-    public float timeBeforeNextJump = 1.2f;
+    private float movementSpeed = 3;
+    private float jumpForce = 300;
+    private float timeBeforeNextJump = 1.2f;
     private float canJump = 0f;
-    public int snowpoint = 0;
+    private int snowpoint = 0;
     
     Animator anim;
     Rigidbody rb;
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviour
 
     void ControllPlayer()
     {
+        if (transform.position.y <= 0.2f) {
+            eliminate();
+        }
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 
@@ -59,5 +63,11 @@ public class PlayerController : MonoBehaviour
                 canJump = Time.time + timeBeforeNextJump;
                 anim.SetTrigger("jump");
         }
+    }
+
+    void eliminate() {
+        Destroy(penguin);
+        Destroy(snowball);
+        this.enabled = false;
     }
 }
