@@ -17,18 +17,17 @@ public class trigger : MonoBehaviour
     void Update()
     {
         deep = deep +1;
-        Debug.Log(deep);
     }
 
     public int getDeep(){
         return deep;
     }
     void OnTriggerStay(Collider other) {
-        Debug.Log("trigger happened!");
         if(other.gameObject.GetComponent<trigger>()) {
-            Debug.Log("auth started!");
             if(this.deep >= other.gameObject.GetComponent<trigger>().getDeep()){
-            snowmanClone = Instantiate(snowman,transform.position + Vector3.down*3 ,Quaternion.identity) as GameObject;}
+            snowmanClone = Instantiate(snowman,transform.position + Vector3.down*3 ,Quaternion.identity) as GameObject;
+            snowmanClone.tag = "Goodsnowman";
+            }
             Object.Destroy(other.gameObject);
             Object.Destroy(gameObject);
         }
