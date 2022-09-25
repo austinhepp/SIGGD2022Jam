@@ -17,6 +17,7 @@ public class trigger : MonoBehaviour
     void Update()
     {
         deep = deep +1;
+        Debug.Log(deep);
     }
 
     public int getDeep(){
