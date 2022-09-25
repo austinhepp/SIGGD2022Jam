@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         if (snowpoint == 2500 && Input.GetMouseButtonDown(0)) {
             snowpoint = 0;
             snowball.transform.localScale = new Vector3(0,0,0);
-            snowmanballClone = Instantiate(snowmanball,transform.position + new Vector3(0.75f,1.5f,0.75f),Quaternion.identity) as GameObject;
+            snowmanballClone = Instantiate(snowmanball,snowball.transform.position ,Quaternion.identity) as GameObject;
         }
 
         
