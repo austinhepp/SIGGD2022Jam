@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class BotController : MonoBehaviour
@@ -13,11 +11,9 @@ public class BotController : MonoBehaviour
     public float timeBeforeNextJump = 1.2f;
     private float canJump = 0f;
     public int botSnowpoint = 0;
-    public float frameNum = 0;
-    private Text text;
+    public double frameNum = 0;
     public float moveHorizontal = 0f;
     public float moveVertical = 0f;
-    public float newFrameNum = float.MaxValue;
     
     Animator anim;
     Rigidbody rb;
@@ -31,7 +27,6 @@ public class BotController : MonoBehaviour
     void Update()
     {
         ControllPlayer();
-        frameNum++;
     }
 
     void ControllPlayer()
@@ -76,71 +71,12 @@ public class BotController : MonoBehaviour
                 canJump = Time.time + timeBeforeNextJump;
                 anim.SetTrigger("jump");
         }
+        frameNum++;
     }
 
     void eliminate() {
         Destroy(botPenguin);
         Destroy(botSnowball);
-        
-        StartCoroutine(winningScreen());
-
-        //if (Input.GetKeyDown(KeyCode.Return)) {
-      //      SceneManager.LoadScene(0);
-        //}
-        if (newFrameNum > frameNum) {
-            newFrameNum = frameNum;
-        }
-        if (frameNum < newFrameNum + 30000) {
-            if (Input.GetKeyDown(KeyCode.Return)) {
-                SceneManager.LoadScene(0);        
-            }
-        }
         this.enabled = false;
-    }
-    
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    eliminate();  
-    //}
-    IEnumerator winningScreen(){
-        // Load the Arial font from the Unity Resources folder.
-        Font arial;
-        arial = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
-
-        // Create Canvas GameObject.
-        GameObject canvasGO = new GameObject();
-        canvasGO.name = "Canvas";
-        canvasGO.AddComponent<Canvas>();
-        canvasGO.AddComponent<CanvasScaler>();
-        canvasGO.AddComponent<GraphicRaycaster>();
-
-        // Get canvas from the GameObject.
-        Canvas canvas;
-        canvas = canvasGO.GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-
-        // Create the Text GameObject.
-        GameObject textGO = new GameObject();
-        textGO.transform.parent = canvasGO.transform;
-        textGO.AddComponent<Text>();
-
-        // Set Text component properties.
-        text = textGO.GetComponent<Text>();
-        text.font = arial;
-        text.text = "You Win :)";
-        //text.text += "\nPress Enter to Play Again";
-        text.fontSize = 48;
-        text.alignment = TextAnchor.MiddleCenter;
-
-        // Provide Text position and size using RectTransform.
-        RectTransform rectTransform;
-        rectTransform = text.GetComponent<RectTransform>();
-        rectTransform.localPosition = new Vector3(0, 0, 0);
-        rectTransform.sizeDelta = new Vector2(600, 200);
-        //yield return new WaitForSecondsRealtime(3);
-        //my code here after 3 seconds
-        yield return new WaitForSecondsRealtime(1.5f);
-    
-     
     }
 }
