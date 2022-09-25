@@ -48,11 +48,16 @@ public class snowball : MonoBehaviour {
             transform.localScale = temp;
         }
     }
+<<<<<<< Updated upstream
 
     void OnTriggerStay(Collider other) {
         Debug.Log("trogger!");
         if(other.tag == "Goodsnowman") {
             Debug.Log("auth!");
+=======
+    void OnTriggerStay(Collider other) {
+        if(other.tag == "Goodsnowman") {
+>>>>>>> Stashed changes
             other.GetComponent<GoodSnowman>().health += mTarget.GetComponent<PlayerController>().getSnowpoint();
             mTarget.GetComponent<PlayerController>().setSnowpoint(0);
             transform.localScale = new Vector3(0,0,0);
