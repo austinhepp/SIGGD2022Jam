@@ -1,17 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
-//ekfie
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject penguin;
     [SerializeField] private GameObject snowball;
-    [SerializeField] private GameObject snowmanball;
-    GameObject snowmanballClone;
-    GameObject snowballClone;
     //[SerializeField] private GameObject water;
     private float movementSpeed = 3;
     private float jumpForce = 300;
@@ -94,6 +90,7 @@ public class PlayerController : MonoBehaviour
                 canJump = Time.time + timeBeforeNextJump;
                 anim.SetTrigger("jump");
         }
+<<<<<<< HEAD
 
         if (snowpoint == 2500 && Input.GetMouseButtonDown(0)) {
             snowpoint = 0;
@@ -102,6 +99,8 @@ public class PlayerController : MonoBehaviour
         }
 
         
+=======
+>>>>>>> 8b0aebdabe9f67f3826389a7e41c9f5ff76c91cb
     }
 
     void eliminate() {
