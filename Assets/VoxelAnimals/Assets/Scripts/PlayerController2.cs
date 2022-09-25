@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 //ekfie
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     [SerializeField] private GameObject penguin;
     [SerializeField] private GameObject snowball;
@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     private float canJump = 0f;
     private int snowpoint = 0;
     private Text text;
-    public float frameNum = 0.0f;
-    public float newFrameNum = float.MaxValue;
+    public int frameNum = 0;
+    public int newFrameNum = int.MaxValue;
     
     Animator anim;
     Rigidbody rb;

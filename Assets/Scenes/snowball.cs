@@ -50,12 +50,10 @@ public class snowball : MonoBehaviour {
     }
 
     void OnTriggerStay(Collider other) {
-        Debug.Log("trogger!");
         if(other.tag == "Goodsnowman") {
-            Debug.Log("auth!");
-            other.GetComponent<GoodSnowman>().health += mTarget.GetComponent<PlayerController>().getSnowpoint();
-            mTarget.GetComponent<PlayerController>().setSnowpoint(0);
-            transform.localScale = new Vector3(0,0,0);
+            other.GetComponent<GoodSnowman>().health += (int) mTarget.GetComponent<PlayerController2>().getSnowpoint();
+            mTarget.GetComponent<PlayerController2>().setSnowpoint(0);
+            transform.localScale = new Vector3(0.0f,0.0f,0.0f);
         }
     }
 }

@@ -1119,6 +1119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botTarget: {fileID: 976953294}
+  botSnowball: {fileID: 1476246028}
 --- !u!135 &1724349562
 SphereCollider:
   m_ObjectHideFlags: 0
