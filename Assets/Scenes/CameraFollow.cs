@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     private Vector3 cameraOffset;
+    private Vector3 newPosition = new Vector3(1f, 1f, 1f);
     [SerializeField] private GameObject mTarget;
     // Start is called before the first frame update
     void Start()
@@ -20,14 +21,9 @@ public class CameraFollow : MonoBehaviour
     {
         if (mTarget == null) {
             this.enabled = false;
-        }
-        Vector3 newPosition = mTarget.transform.position + cameraOffset;
-        if (mTarget == null) {
-            this.enabled = false;
-        }
-        transform.position = Vector3.Slerp(transform.position, newPosition, 1.0f);
-        if (mTarget == null) {
-            this.enabled = false;
+        } else {
+            newPosition = mTarget.transform.position + cameraOffset;
+            transform.position = Vector3.Slerp(transform.position, newPosition, 1.0f);
         }
     }
 }
