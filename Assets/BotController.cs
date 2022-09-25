@@ -5,6 +5,7 @@ using UnityEngine;
 public class BotController : MonoBehaviour
 {
     [SerializeField] private GameObject botSnowball;
+    [SerializeField] private GameObject botPenguin;
     public float movementSpeed = 3;
     public float jumpForce = 300;
     public float timeBeforeNextJump = 1.2f;
@@ -30,12 +31,15 @@ public class BotController : MonoBehaviour
 
     void ControllPlayer()
     {
-        if (frameNum % 30 == 0) {
-            moveHorizontal = 10 * Random.Range(-1, 1);//Input.GetAxisRaw("Horizontal");
-            moveVertical = 10 * Random.Range(-1, 1);// Input.GetAxisRaw("Vertical");
+        if (transform.position.y <= 0.7f) {
+            eliminate();
+        }
+        if (frameNum % 100 == 0) {
+            //moveHorizontal = 100 * Random.Range(-1, 1);//Input.GetAxisRaw("Horizontal");
+            //moveVertical = 100 * Random.Range(-1, 1);// Input.GetAxisRaw("Vertical");
         } else {
-            moveHorizontal = 0f;
-            moveVertical = 0f;
+            moveHorizontal = 0.0f;
+            moveVertical = 0.0f;
         }
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
@@ -68,5 +72,11 @@ public class BotController : MonoBehaviour
                 anim.SetTrigger("jump");
         }
         frameNum++;
+    }
+
+    void eliminate() {
+        Destroy(botPenguin);
+        Destroy(botSnowball);
+        this.enabled = false;
     }
 }
