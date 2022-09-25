@@ -48,12 +48,24 @@ public class snowball : MonoBehaviour {
             transform.localScale = temp;
         }
     }
+<<<<<<< Updated upstream
 
     void OnTriggerStay(Collider other) {
         if(other.tag == "Goodsnowman") {
+<<<<<<< HEAD
             other.GetComponent<GoodSnowman>().health += (int) mTarget.GetComponent<PlayerController2>().getSnowpoint();
             mTarget.GetComponent<PlayerController2>().setSnowpoint(0);
             transform.localScale = new Vector3(0.0f,0.0f,0.0f);
+=======
+            Debug.Log("auth!");
+=======
+    void OnTriggerStay(Collider other) {
+        if(other.tag == "Goodsnowman") {
+>>>>>>> Stashed changes
+            other.GetComponent<GoodSnowman>().health += mTarget.GetComponent<PlayerController>().getSnowpoint();
+            mTarget.GetComponent<PlayerController>().setSnowpoint(0);
+            transform.localScale = new Vector3(0,0,0);
+>>>>>>> f85b156c50b8ec9c72db6fa5a2c1a08f081b1197
         }
     }
 }

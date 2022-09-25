@@ -17,7 +17,7 @@ public class PlayerController2 : MonoBehaviour
     private float jumpForce = 300;
     private float timeBeforeNextJump = 1.2f;
     private float canJump = 0f;
-    private int snowpoint = 0;
+    public float snowpoint = 0;
     private Text text;
     public int frameNum = 0;
     public int newFrameNum = int.MaxValue;
@@ -29,7 +29,15 @@ public class PlayerController2 : MonoBehaviour
         this.snowpoint = snowpoint;
     }
     
+<<<<<<< Updated upstream
     public int getSnowpoint() {
+=======
+    public void setSnowpoint(float snowpoint) {
+        this.snowpoint = snowpoint;
+    }
+    
+    public float getSnowpoint() {
+>>>>>>> Stashed changes
         return snowpoint;
     }
     void Start()
@@ -42,6 +50,7 @@ public class PlayerController2 : MonoBehaviour
     {
         ControllPlayer();
         frameNum++;
+        snowpoint = snowball.transform.localScale.x * 1000f;
     }
 
     void ControllPlayer()
@@ -67,7 +76,6 @@ public class PlayerController2 : MonoBehaviour
                 Vector3 temp = snowball.transform.localScale;
                 temp += new Vector3(0.001f, 0.001f, 0.001f);
                 snowball.transform.localScale = temp;
-                snowpoint = snowpoint + 1;
                 //snowball.transform.localScale = snowball.transform.localScale * 1.5f;
                 //Vector3.Scale(snowball.transform.localScale, snowball.transform.localScale + new Vector3(1.5f, 1.5f, 1.5f));
             }
@@ -102,7 +110,7 @@ public class PlayerController2 : MonoBehaviour
                 anim.SetTrigger("jump");
         }
 
-        if (snowpoint == 2500 && Input.GetMouseButtonDown(0)) {
+        if (snowpoint == 2500f && Input.GetMouseButtonDown(0)) {
             snowpoint = 0;
             snowball.transform.localScale = new Vector3(0,0,0);
             snowmanballClone = Instantiate(snowmanball,snowball.transform.position ,Quaternion.identity) as GameObject;

@@ -19,9 +19,14 @@ public class snowmanSnowball : MonoBehaviour
     void Update()
     {
         if(botTarget != null && botSnowball != null) {
+<<<<<<< HEAD
             Debug.Log("nut bull");
             if (Vector3.Distance(transform.position, botTarget.transform.position) < 8) {
                 Debug.Log("distance");
+=======
+            if (Vector3.Distance(transform.position, botTarget.transform.position) < 8) {
+                
+>>>>>>> f85b156c50b8ec9c72db6fa5a2c1a08f081b1197
                 Vector3 difference = botTarget.transform.position - transform.position;
                 //difference = Vector3.Scale(difference.normalized, new Vector3(0.05f, 0.05f, 0.05f));
                 //transform.position += difference;
@@ -32,7 +37,11 @@ public class snowmanSnowball : MonoBehaviour
                 //transform.localScale = new Vector3(0, 0, 0);
                 //Destroy(this);
             //}
+<<<<<<< HEAD
             if (Vector3.Distance((transform.position + new Vector3(0,4,0)), botTarget.transform.position) < 2) {
+=======
+            if (Vector3.Distance(transform.position, botTarget.transform.position) < 2) {
+>>>>>>> f85b156c50b8ec9c72db6fa5a2c1a08f081b1197
                 float compare1 = transform.localScale.x;
                 float compare2 = botSnowball.transform.localScale.x;
                 if(compare1 >= compare2) {
@@ -54,8 +63,13 @@ public class snowmanSnowball : MonoBehaviour
                 transform.localScale = temp;
                 }
                 
+<<<<<<< HEAD
                 //transform.localScale = new Vector3(0, 0, 0);
                 //Destroy(this);
+=======
+                transform.localScale = new Vector3(0, 0, 0);
+                Destroy(this);
+>>>>>>> f85b156c50b8ec9c72db6fa5a2c1a08f081b1197
             }
         }
     }
